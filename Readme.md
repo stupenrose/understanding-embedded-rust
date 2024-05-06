@@ -50,8 +50,14 @@ Rust has a standard library, but can be used without it.  Omitting the standard 
   - based on their fork of FreeRTOS
   - has all the official drivers for their hardware, etc
   - has a configuration system for enabling the features in FreeRTOS
+  - Using it:
+    - You're supposed to source their stuff before building: `. ${esp-idf-home}/export.sh`
+    - Then, they wrap all the tools (`make`, etc) with `idf.py`, so:
+      - `idf.py build`
+      - `idf.py flash`
+      - `idf.py monitor`
 
-### Putting it all together
+### Rust on Espressif/ESP32*
 
 - [embuild](https://github.com/esp-rs/embuild) - A rust build tool that invokes things like esp-idf.  
   - In the case of esp-idf:
@@ -61,6 +67,8 @@ Rust has a standard library, but can be used without it.  Omitting the standard 
   - Documentation/guides
     - https://docs.esp-rs.org/
     - [Rust on ESP Book](https://docs.esp-rs.org/book/)
+  - [esp-up](https://github.com/esp-rs/espup) - Tool for installing and maintaining Espressif Rust ecosystem.
+    - `espup install`
   - crates
     - crates based on esp-idf:
       - [esp-idf-sys]() - *Raw* Rust bindings for the esp-idf SDK
